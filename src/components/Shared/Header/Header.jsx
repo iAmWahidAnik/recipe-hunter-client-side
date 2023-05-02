@@ -6,7 +6,7 @@ const Header = () => {
         <div>
             <div className="navbar bg-slate-100">
                 <div className="">
-                    <Link className='btn btn-ghost normal-case text-xl'>Cuisine's Chef</Link>
+                    <Link to='/' className='btn btn-ghost normal-case text-xl'>Cuisine's Chef</Link>
                 </div>
                 <div className='mx-auto font-semibold'>
                     <NavLink to='/' className={({ isActive }) =>

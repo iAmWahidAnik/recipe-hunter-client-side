@@ -10,6 +10,7 @@ import Register from './components/Authentication/Register/Register.jsx'
 import NotFound from './components/ErrorElement/NotFound/NotFound.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import Blog from './components/SinglePages/Blog/Blog.jsx'
+import ChefDetails from './components/SinglePages/ChefDetails/ChefDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'chef/:id',
+        element: <ChefDetails></ChefDetails>
       }
     ]
   }

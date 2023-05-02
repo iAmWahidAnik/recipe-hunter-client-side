@@ -19,7 +19,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className='my-10'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 m-5'>
                     {
                         chefData.map(chef => <ChefCard key={chef.chefId} chef={chef}></ChefCard>)
