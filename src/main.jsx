@@ -7,11 +7,13 @@ import MainLayout from './components/Layout/MainLayout/MainLayout.jsx'
 import Home from './components/SinglePages/Home/Home.jsx'
 import Login from './components/Authentication/Login/Login.jsx'
 import Register from './components/Authentication/Register/Register.jsx'
+import NotFound from './components/ErrorElement/NotFound/NotFound.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: '/',
