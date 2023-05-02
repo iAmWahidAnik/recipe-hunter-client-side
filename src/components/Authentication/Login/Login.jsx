@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
+                <div className="hero-content flex-col w-full">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                     </div>
@@ -33,7 +33,9 @@ const Login = () => {
                                 </div>
                             </div>
                         </form>
-                        <small className='text-center mb-5'>new user ? go to <Link className='text-primary font-semibold' to='/register'>Register</Link></small>
+                        <button className="btn btn-outline btn-error mx-8 mb-4">Google Sign In</button>
+                        <button className="btn btn-outline mx-8">gitHub Sign In</button>
+                        <small className='text-center my-5'>new user ? go to <Link className='text-primary font-semibold' to='/register'>Register</Link></small>
                     </div>
                 </div>
             </div>

@@ -9,13 +9,13 @@ const Header = () => {
                     <Link className='btn btn-ghost normal-case text-xl'>Cuisine's Chef</Link>
                 </div>
                 <div className='mx-auto font-semibold'>
-                    <NavLink to='/' className={({ isActive, isPending }) =>
+                    <NavLink to='/' className={({ isActive }) =>
                         isActive ? "text-primary mx-2" : "mx-2"
                     } >Home</NavLink>
-                    <NavLink to='/blog' className={({ isActive, isPending }) =>
+                    <NavLink to='/blog' className={({ isActive }) =>
                         isActive ? "text-primary mx-2" : "mx-2"
                     } >Blog</NavLink>
-                    <NavLink to='/login' className='mx-2'><button className='btn btn-primary'>Login</button></NavLink>
+                    <Link to='/login' className='mx-2'><button className='btn btn-primary'>Login</button></Link>
                 </div>
                 <div className="flex-none">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
