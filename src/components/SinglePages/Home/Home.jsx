@@ -1,7 +1,10 @@
 import React from 'react';
 import ChefCard from './ChefCard';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+    const chefData = useLoaderData();
+    console.log(chefData);
     return (
         <div>
             <section>
@@ -17,7 +20,11 @@ const Home = () => {
                 </div>
             </section>
             <section>
-                <ChefCard></ChefCard>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 m-5'>
+                    {
+                        chefData.map(chef => <ChefCard key={chef.chefId} chef={chef}></ChefCard>)
+                    }
+                </div>
             </section>
         </div>
     );
