@@ -12,6 +12,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import Blog from './components/SinglePages/Blog/Blog.jsx'
 import ChefDetails from './components/SinglePages/ChefDetails/ChefDetails.jsx'
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes.jsx'
+import About from './components/SinglePages/About/About.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:3000/chefs')
+        loader: () => fetch('https://chef-recipe-hunter-server-side-iamwahidanik.vercel.app/chefs')
       },
       {
         path: 'login',
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
       {
         path: 'chef/:id',
         element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
+        loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-iamwahidanik.vercel.app/chefs/${params.id}`)
+      },
+      {
+        path: 'about',
+        element: <About></About>
       }
     ]
   }

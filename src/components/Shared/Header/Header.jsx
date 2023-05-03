@@ -16,13 +16,16 @@ const Header = () => {
                 <div className="">
                     <Link to='/' className='btn btn-ghost normal-case text-xl'>Cuisine's Chef</Link>
                 </div>
-                <div className='mx-auto font-semibold'>
+                <div className='flex-col gap-3 md:gap-0 md:flex-row mx-auto font-semibold'>
                     <NavLink to='/' className={({ isActive }) =>
                         isActive ? "text-primary mx-2" : "mx-2"
                     } >Home</NavLink>
                     <NavLink to='/blog' className={({ isActive }) =>
                         isActive ? "text-primary mx-2" : "mx-2"
                     } >Blog</NavLink>
+                    <NavLink to='/about' className={({ isActive }) =>
+                        isActive ? "text-primary mx-2" : "mx-2"
+                    } >About</NavLink>
                     {user && <button onClick={handleLogOut} className='btn btn-primary mx-2'>Logout</button>}
                 </div>
                 <div className="flex-none tooltip tooltip-left" data-tip={user?.displayName && user?.displayName}>

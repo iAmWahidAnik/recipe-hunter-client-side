@@ -1,17 +1,32 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const navigate = useNavigate()
-    const {login, googleSignIn} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const {login, googleSignIn, gitHubSignIn} = useContext(AuthContext);
+
+    const from = location?.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         googleSignIn()
         .then(result => {
             const user = result.user;
-            navigate('/')
+            navigate(from)
+        })
+        .catch(error => {
+            const message = error.message;
+            setError(message);
+        })
+    }
+
+    const handleGithubSignIn = () => {
+        gitHubSignIn()
+        .then(result => {
+            const user = result.user;
+            navigate(from)
         })
         .catch(error => {
             const message = error.message;
@@ -68,7 +83,7 @@ const Login = () => {
                             </div>
                         </form>
                         <button onClick={handleGoogleSignIn} className="btn btn-outline btn-error mx-8 mb-4">Google Sign In</button>
-                        <button className="btn btn-outline mx-8">gitHub Sign In</button>
+                        <button onClick={handleGithubSignIn} className="btn btn-outline mx-8">gitHub Sign In</button>
                         <small className='text-center my-5'>new user ? go to <Link className='text-primary font-semibold' to='/register'>Register</Link></small>
                     </div>
                 </div>
