@@ -2,7 +2,7 @@ import React from 'react';
 
 const SpecialMenus = () => {
     return (
-        <div className='grid grid-cols-3 my-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 md:mx-20'>
             <div className='m-5'>
                 <div className='pb-5'>
                     <img className='w-96 h-48 object-cover' src="https://www.thewholesomedish.com/wp-content/uploads/2019/04/The-Best-Classic-Hamburgers-550-500x375.jpg" alt="" />

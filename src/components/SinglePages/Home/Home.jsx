@@ -2,10 +2,11 @@ import React from 'react';
 import ChefCard from './ChefCard';
 import { useLoaderData } from 'react-router-dom';
 import SpecialMenus from './SpecialMenus';
+import SpecialRecipes from './SpecialRecipes';
 
 const Home = () => {
     const chefData = useLoaderData();
-    console.log(chefData);
+    // console.log(chefData);
     return (
         <div>
             <section>
@@ -20,16 +21,22 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='my-10'>
+            <section className='my-20'>
                 <h1 className='text-6xl text-center text-primary'>Our Special Menus</h1>
                 <SpecialMenus></SpecialMenus>
             </section>
-            <section className='my-10'>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 m-5'>
+            <section className='my-20'>
+            <h1 className='text-6xl text-center text-primary'>Our Special Chef's</h1>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-14 m-5 py-10'>
                     {
                         chefData.map(chef => <ChefCard key={chef.chefId} chef={chef}></ChefCard>)
                     }
                 </div>
+            </section>
+            <section className='my-20'>
+            <h1 className='text-6xl text-center text-primary'>Our Special Recipes</h1>
+            <p className='text-center text-primary my-5'><small>Note : hover to see info</small></p>
+                <SpecialRecipes></SpecialRecipes>
             </section>
         </div>
     );
