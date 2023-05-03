@@ -11,6 +11,7 @@ import NotFound from './components/ErrorElement/NotFound/NotFound.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import Blog from './components/SinglePages/Blog/Blog.jsx'
 import ChefDetails from './components/SinglePages/ChefDetails/ChefDetails.jsx'
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'chef/:id',
-        element: <ChefDetails></ChefDetails>,
+        element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
         loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
       }
     ]

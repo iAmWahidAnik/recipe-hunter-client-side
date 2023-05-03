@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaBeer } from 'react-icons/fa';
+import React, { useContext } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 

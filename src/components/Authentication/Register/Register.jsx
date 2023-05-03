@@ -36,6 +36,8 @@ const Register = () => {
         register(email, password)
         .then(result => {
             const user = result.user;
+            user.displayName = name;
+            user.photoURL = photoLink;
             navigate('/')
         })
         .catch(error => {
