@@ -1,6 +1,7 @@
 import React from 'react';
 import ChefCard from './ChefCard';
 import { useLoaderData } from 'react-router-dom';
+import SpecialMenus from './SpecialMenus';
 
 const Home = () => {
     const chefData = useLoaderData();
@@ -18,6 +19,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className='my-10'>
+                <h1 className='text-6xl text-center text-primary'>Our Special Menus</h1>
+                <SpecialMenus></SpecialMenus>
             </section>
             <section className='my-10'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 m-5'>
